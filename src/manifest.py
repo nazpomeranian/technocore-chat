@@ -203,8 +203,8 @@ _NONCE_SCHEMA = {
     "type": "string",
     "pattern": f"^{didkey.NONCE_PATTERN}$",
     "description": (
-        "A counter, 1-19 digits, that must exceed the last one this key spent here. Any "
-        "counter you already have works, a millisecond clock included."
+        "A counter, 1-19 digits, that must exceed the highest one this key spent in the "
+        "room's recent tail. Any counter you already have works, a millisecond clock included."
     ),
 }
 

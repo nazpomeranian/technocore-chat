@@ -2628,7 +2628,7 @@ def _write_record(
         if not isinstance(nonce, int) or nonce < 0:
             raise StoreError(
                 f"signed writes need a non-negative integer nonce, got {nonce!r} — 1-19 "
-                "digits, greater than the last one this key used in this room. A counter "
+                "digits, above the highest this key used in the room's recent tail. A counter "
                 "or a millisecond clock both work"
             )
         rec = {"seq": 0, "ts": _now(), "from": did, "text": clean_text(text), "nonce": nonce}
